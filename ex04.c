@@ -16,4 +16,5 @@ int main()
    printf("A area vale: %.2f\n", area);
    printf("O perimeitro vale: %.2f", perimetro);
    return(0);
+   
 }
