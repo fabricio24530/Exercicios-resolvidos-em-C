@@ -1,4 +1,7 @@
-O problema consiste em auxiliar um professor no fechamento das notas de uma turma. Para tanto, deve ser construído um programa que leia o código do aluno, o número de notas da disciplina e as notas. Calcule a média final de cada aluno e informe o número de alunos aprovados e reprovados. Para ser aprovado o aluno precisa obter média maior ou igual a 6. O programa é encerrado quando é informado o código de aluno 0.
+O problema consiste em auxiliar um professor no fechamento das notas de uma turma. Para tanto, deve ser construído um 
+programa que leia o código do aluno, o número de notas da disciplina e as notas. Calcule a média final de cada aluno e 
+informe o número de alunos aprovados e reprovados. Para ser aprovado o aluno precisa obter média maior ou igual a 7. 
+O programa é encerrado quando é informado o código de aluno 0.
 
 #include <stdio.h>
 #include <stdlib.h>
