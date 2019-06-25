@@ -6,36 +6,22 @@
 
 int main()
 {
-  int i, num, rsoma, rsubtracao, rmultiplicacao;
-  float rdivisao;
+    int i, num, rsoma, rsubtracao, rmultiplicacao;
+    float rdivisao;
 
-  i = 1;
-  printf("Informe um numero inteiro: \n");
-  scanf("%i", &num);
-  printf("Adição\n\n");
-  for ( i = 1; i < 11; i++)
-  {
-    rsoma = num + i;
-    printf("%i + %i = %i\n", num, i, rsoma);
-  }
-  printf("\nSubtração\n\n");
-  for ( i = 1; i < 11; i++)
-  {
-    rsubtracao = num - i;
-    printf("%i - %i = %i\n", num, i, rsubtracao);
-  }
-   printf("\nMultiplicacao\n\n");
-  for ( i = 1; i < 11; i++)
-  {
-    rmultiplicacao = num * i;
-    printf("%i x %i = %i\n", num, i, rmultiplicacao);
-  }
-  printf("\nDivisao\n\n");
-  for ( i = 1; i < 11; i++)
-  {
-    rdivisao = (float)num / i;
-    printf("%i / %i = %.2f\n", num, i, rdivisao);
-  }
-  
-  return 0;
+    i = 1;
+    printf("Informe um numero inteiro: \n");
+    scanf("%i", &num);
+    printf("Adição\t\tSubtração\t\tMultiplicação\t\tDivisão\n\n");
+
+    for ( i = 1; i < 11; i++)
+    {
+        rsoma = num + i;
+        rsubtracao = num - i;
+        rmultiplicacao = num * i;
+        rdivisao = (float)num / i;
+        printf("%i + %i = %i\t%i - %i = %i\t\t%i x %i = %i\t\t%i / %i = %.2f\n", num, i, rsoma, num, i, rsubtracao, num, i, rmultiplicacao, num, i, rdivisao);
+    }
+
+    return 0;
 }
