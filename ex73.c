@@ -1,4 +1,5 @@
 /*Jogo da velha*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -37,7 +38,7 @@ int main(void)
 {
 
     char jogo[DIM][DIM];
-    char ch = 'o', pause;
+    char ch = 'o', pause, pause2;
     int jogadas = 0;
     int posLinha, posColuna, l, c;
 
@@ -51,7 +52,7 @@ int main(void)
 
         printf("\n\nInforme a linha e a coluna que deseja marcar:");
         scanf("%d %d", &posLinha, &posColuna);
-        if((posLinha > 3 || posLinha <= 0) || (posColuna > 3 || posColuna <= 0))
+        if((posLinha > 3 || posLinha < 1) || (posColuna > 3 || posColuna < 1))
         {
             printf("Valores incorretos!!!\n[C] - para continuar\n[S] - Para sair\n");
             scanf(" %c", &pause);
@@ -70,14 +71,28 @@ int main(void)
 
             else
             {
-                printf("Posição ocupuda, escolha outra!!\n");
+                printf("Posição ocupada, deseja escolher outra?\n[S]-Sim\n[N]-Não\n");
+                scanf(" %c", &pause2);
+
             }
         }
-        if (jogadas == DIM * DIM || (pause == 'S' || pause == 's'))
+        if (jogadas == 9 || (pause == 'S' || pause == 's') || (pause2 == 'N' || pause2 == 'n'))
         {
             system("clear");
             printf("Fim do jogo.\n\n");
             break;
+        }
+        else
+        {
+            if((jogo[0][0] == jogo[1][1] && jogo[1][1] == jogo[2][2] && jogo[0][0] != ' ') || (jogo[0][2] == jogo[1][1] && jogo[1][1] == jogo[2][0] && jogo[0][2] != ' ') || (jogo[0][0] == jogo[0][1] && jogo[0][1] == jogo[0][2] && jogo[0][0] != ' ') || (jogo[1][0] == jogo[1][1] && jogo[1][1] == jogo[1][2] && jogo[1][0] != ' ') || (jogo[2][0] == jogo[2][1] && jogo[2][1] == jogo[2][2] && jogo[2][0] != ' ') || (jogo[0][0] == jogo[1][0] && jogo[1][0] == jogo[2][0] && jogo[0][0] != ' ') || (jogo[0][1] == jogo[1][1] && jogo[1][1] == jogo[2][1] && jogo[0][1] != ' ') || (jogo[0][2] == jogo[1][2] && jogo[1][2] == jogo[2][2] && jogo[0][2] != ' '))
+            {
+                system("clear");
+                velha(jogo);
+                putchar('\n');
+                putchar('\n');
+                printf("O jogador \"%c\" ganhou", jogo[0][0]);
+                break;
+            }
         }
 
     }
